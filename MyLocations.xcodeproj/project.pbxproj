@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1B22FC201D601B000D0B8E /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B22FB201D601B000D0B8E /* LocationDetailsViewController.swift */; };
 		5F35E5FF201B82D300540DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F35E5FE201B82D300540DFB /* AppDelegate.swift */; };
 		5F35E601201B82D300540DFB /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F35E600201B82D300540DFB /* CurrentLocationViewController.swift */; };
 		5F35E603201B82D300540DFB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F35E602201B82D300540DFB /* SecondViewController.swift */; };
 		5F35E606201B82D300540DFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F35E604201B82D300540DFB /* Main.storyboard */; };
 		5F35E608201B82D300540DFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F35E607201B82D300540DFB /* Assets.xcassets */; };
 		5F35E60B201B82D300540DFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F35E609201B82D300540DFB /* LaunchScreen.storyboard */; };
+		5F4878C6201EA9D9006BF1B4 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F4878C5201EA9D9006BF1B4 /* Date+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F1B22FB201D601B000D0B8E /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		5F35E5FB201B82D300540DFB /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F35E5FE201B82D300540DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F35E600201B82D300540DFB /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		5F35E607201B82D300540DFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F35E60A201B82D300540DFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F35E60C201B82D300540DFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F4878C5201EA9D9006BF1B4 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		5F35E5FD201B82D300540DFB /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				5F4878C4201EA9C3006BF1B4 /* Extensions */,
 				5F35E5FE201B82D300540DFB /* AppDelegate.swift */,
 				5F35E600201B82D300540DFB /* CurrentLocationViewController.swift */,
 				5F35E602201B82D300540DFB /* SecondViewController.swift */,
@@ -63,8 +68,17 @@
 				5F35E607201B82D300540DFB /* Assets.xcassets */,
 				5F35E609201B82D300540DFB /* LaunchScreen.storyboard */,
 				5F35E60C201B82D300540DFB /* Info.plist */,
+				5F1B22FB201D601B000D0B8E /* LocationDetailsViewController.swift */,
 			);
 			path = MyLocations;
+			sourceTree = "<group>";
+		};
+		5F4878C4201EA9C3006BF1B4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5F4878C5201EA9D9006BF1B4 /* Date+String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +153,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1B22FC201D601B000D0B8E /* LocationDetailsViewController.swift in Sources */,
+				5F4878C6201EA9D9006BF1B4 /* Date+String.swift in Sources */,
 				5F35E603201B82D300540DFB /* SecondViewController.swift in Sources */,
 				5F35E5FF201B82D300540DFB /* AppDelegate.swift in Sources */,
 				5F35E601201B82D300540DFB /* CurrentLocationViewController.swift in Sources */,
