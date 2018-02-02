@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1222802024D4920042AA46 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F12227F2024D4920042AA46 /* LocationsViewController.swift */; };
+		5F1222822024F3AD0042AA46 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1222812024F3AD0042AA46 /* LocationCell.swift */; };
 		5F1789DB201FC48E008426DF /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1789DA201FC48E008426DF /* HudView.swift */; };
 		5F1789DD201FDEA0008426DF /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1789DC201FDEA0008426DF /* Functions.swift */; };
+		5F1789E12020039F008426DF /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F1789DF2020039F008426DF /* DataModel.xcdatamodeld */; };
+		5F1789E4202006E1008426DF /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1789E2202006E1008426DF /* Location+CoreDataClass.swift */; };
+		5F1789E5202006E1008426DF /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1789E3202006E1008426DF /* Location+CoreDataProperties.swift */; };
 		5F1B22FC201D601B000D0B8E /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B22FB201D601B000D0B8E /* LocationDetailsViewController.swift */; };
 		5F35E5FF201B82D300540DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F35E5FE201B82D300540DFB /* AppDelegate.swift */; };
 		5F35E601201B82D300540DFB /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F35E600201B82D300540DFB /* CurrentLocationViewController.swift */; };
@@ -21,8 +26,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5F12227F2024D4920042AA46 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		5F1222812024F3AD0042AA46 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		5F1789DA201FC48E008426DF /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		5F1789DC201FDEA0008426DF /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		5F1789E02020039F008426DF /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		5F1789E2202006E1008426DF /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		5F1789E3202006E1008426DF /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		5F1B22FB201D601B000D0B8E /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		5F35E5FB201B82D300540DFB /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F35E5FE201B82D300540DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,13 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				5F1789DA201FC48E008426DF /* HudView.swift */,
+				5F1222812024F3AD0042AA46 /* LocationCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5F1789DE2020038D008426DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5F1789DF2020039F008426DF /* DataModel.xcdatamodeld */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		5F35E5F2201B82D300540DFB = {
 			isa = PBXGroup;
 			children = (
+				5F1789E2202006E1008426DF /* Location+CoreDataClass.swift */,
+				5F1789E3202006E1008426DF /* Location+CoreDataProperties.swift */,
 				5F35E5FD201B82D300540DFB /* MyLocations */,
 				5F35E5FC201B82D300540DFB /* Products */,
 			);
@@ -74,6 +95,7 @@
 		5F35E5FD201B82D300540DFB /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
+				5F1789DE2020038D008426DF /* Models */,
 				5F1789D9201FC473008426DF /* Views */,
 				5F4878C7201ECE4E006BF1B4 /* Controllers */,
 				5F4878C4201EA9C3006BF1B4 /* Extensions */,
@@ -102,6 +124,7 @@
 				5F1B22FB201D601B000D0B8E /* LocationDetailsViewController.swift */,
 				5F35E600201B82D300540DFB /* CurrentLocationViewController.swift */,
 				5F4878C8201ECE5D006BF1B4 /* CategoryPickerViewController.swift */,
+				5F12227F2024D4920042AA46 /* LocationsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,12 +203,17 @@
 			files = (
 				5F4878C9201ECE5D006BF1B4 /* CategoryPickerViewController.swift in Sources */,
 				5F1B22FC201D601B000D0B8E /* LocationDetailsViewController.swift in Sources */,
+				5F1789E5202006E1008426DF /* Location+CoreDataProperties.swift in Sources */,
 				5F4878C6201EA9D9006BF1B4 /* Date+String.swift in Sources */,
 				5F1789DD201FDEA0008426DF /* Functions.swift in Sources */,
+				5F1222822024F3AD0042AA46 /* LocationCell.swift in Sources */,
 				5F35E603201B82D300540DFB /* SecondViewController.swift in Sources */,
 				5F35E5FF201B82D300540DFB /* AppDelegate.swift in Sources */,
+				5F1789E12020039F008426DF /* DataModel.xcdatamodeld in Sources */,
 				5F1789DB201FC48E008426DF /* HudView.swift in Sources */,
+				5F1789E4202006E1008426DF /* Location+CoreDataClass.swift in Sources */,
 				5F35E601201B82D300540DFB /* CurrentLocationViewController.swift in Sources */,
+				5F1222802024D4920042AA46 /* LocationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +353,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQB7945LTG;
 				INFOPLIST_FILE = MyLocations/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nearsoft.MyLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,6 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQB7945LTG;
 				INFOPLIST_FILE = MyLocations/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nearsoft.MyLocations;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,6 +400,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5F1789DF2020039F008426DF /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5F1789E02020039F008426DF /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 5F1789E02020039F008426DF /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5F35E5F3201B82D300540DFB /* Project object */;
 }

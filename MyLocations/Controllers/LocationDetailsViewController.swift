@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class LocationDetailsViewController: UITableViewController {
   @IBOutlet weak var descriptionTextView: UITextView!
@@ -17,14 +18,32 @@ class LocationDetailsViewController: UITableViewController {
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   
+  var managedObjectContext: NSManagedObjectContext!
   var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
   var placemark: CLPlacemark?
   var categoryName = "No Category"
+  var date = Date()
+  var locationToEdit: Location? {
+    didSet {
+      if let location = locationToEdit {
+        descriptionText = location.locationDescription
+        categoryName = location.category
+        date = location.date
+        coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+        placemark = location.placemark
+      }
+    }
+  }
+  var descriptionText = ""
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    descriptionTextView.text = ""
-    categoryLabel.text = ""
+    
+    if let location = locationToEdit {
+      title = "Edit Location"
+    }
+
+    descriptionTextView.text = descriptionText
     latitudeLabel.text = String(format: "%2.f", coordinate.latitude)
     longitudeLabel.text = String(format: "%2.f", coordinate.longitude)
     categoryLabel.text = categoryName
@@ -36,7 +55,7 @@ class LocationDetailsViewController: UITableViewController {
       addressLabel.text = "No address found"
     }
     
-    dateLabel.text = Date().toString(withFormat: "MMMM, dd YYYY")
+    dateLabel.text = date.toString(withFormat: "MMMM, dd YYYY")
     
     let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
     gestureRecognizer.cancelsTouchesInView = false
@@ -66,13 +85,34 @@ class LocationDetailsViewController: UITableViewController {
   
   @IBAction private func done() {
     let hudView = HudView.hud(inView: navigationController!.view, animated: true)
-    hudView.text = "Tagged"
     
-    let delayInSeconds = 0.6
-    afterDelay(delayInSeconds, run: {
-      hudView.hide()
-      self.navigationController?.popViewController(animated: true)
-    })    
+    let location: Location
+    
+    if let tempLocation = locationToEdit {
+      hudView.text = "Updated"
+      location = tempLocation
+    } else {
+      hudView.text = "Tagged"
+      location = Location(context: managedObjectContext)
+    }
+
+    location.locationDescription = descriptionTextView.text
+    location.category = categoryName
+    location.date = date
+    location.longitude = coordinate.longitude
+    location.latitude = coordinate.latitude
+    location.placemark = placemark
+    
+    do {
+      try managedObjectContext.save()
+      afterDelay(0.6, run: {
+        hudView.hide()
+        self.navigationController?.popViewController(animated: true)
+      })
+    }
+    catch {
+      fatalCoreDataError(error)
+    }
   }
   
   @IBAction private func cancel() {
